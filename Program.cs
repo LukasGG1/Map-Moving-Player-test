@@ -1,17 +1,21 @@
 ﻿using System;
 
-namespace HelloWorld
+namespace MapExample
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Create a new instance of a Game
-            Game game = new Game();
-            //Run the Game
-            game.Run();
-            //Wait before closing
-            Console.ReadKey();
+            Map map = new Map();
+
+
+            while (!map.GameOver)
+            {
+
+                map.update();
+                map.draw();
+                //map.SaveMap();
+            }
         }
     }
 }
