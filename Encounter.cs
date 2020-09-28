@@ -7,15 +7,15 @@ namespace HelloWorld
 {
     class Encounter
     {
-        Player player;
         //int levelScaleMax = 5;
         int HitChance = 50;
         Random random = new Random();
 
-        public Encounter(ref Player player)
+        public Encounter(ref Player player, Map _gameOver)
         {
-            Battle(ref player);
+            Battle(ref player, ref _gameOver);
         }
+
 
         void GetInput(out char input, string option1, string option2)
         {
@@ -30,8 +30,9 @@ namespace HelloWorld
                 input = Console.ReadKey().KeyChar;
             }
         }
-        public void Battle(ref Player player)
-        {   
+        public bool Battle(ref Player player, ref Map _gameOver) //<<< (Character player)
+        {
+            
             //initialize default enemy stats
             int enemyHealth = 0;
             int enemyAttack = 0;
@@ -122,11 +123,11 @@ namespace HelloWorld
 
                     Console.Clear();
                 }
-
-
+                
+               
             }
             //Return whether or not our player died
-
+            return player.playerHealth <= 0;
         }
         void BlockAttack(ref int opponentHealth, int attackVal, int opponentDefense)
         {

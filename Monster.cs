@@ -13,13 +13,15 @@ namespace MapExample
             mapTile = 'M';
         }
         
-        public override void Interact(ref Player player)
+
+        public override void Interact(ref Player player, ref Map _gameoverPlayer)
         {
             Console.WriteLine();
             Console.WriteLine(" you run into a Monster");
             Console.ReadKey();
-            Encounter battle = new Encounter(player);
+            Encounter battle = new Encounter(ref player, _gameoverPlayer);
         }
-        
+
+
     }
 }
