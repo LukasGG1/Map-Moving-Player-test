@@ -96,8 +96,10 @@ namespace HelloWorld
                     else
                     {
                         Console.WriteLine("you missed");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
-                    if (HitRoll > HitChance)
+                    if (HitRoll < HitChance)
                     {
                         //After the player attacks, the enemy takes its turn. Since the player decided not to defend, the block attack function is not called.
                         player.playerHealth -= enemyAttack;

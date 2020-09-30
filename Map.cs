@@ -18,6 +18,23 @@ namespace MapExample
         string path = "SaveMap.txt";
 
         public bool GameOver = false;
+
+
+
+        public void Run()
+        {
+            Start();
+            SelectCharacter();
+
+            while (GameOver == false)
+            {
+                update();
+            }
+
+            End();
+
+        }
+
         public Map()
         {
             //Load Map OtherWise Generate a new map
@@ -45,7 +62,7 @@ namespace MapExample
             draw();
         }
 
-       
+
         public void draw()
         {
             Console.Clear();
@@ -68,10 +85,10 @@ namespace MapExample
 
         //public void AddObject(object 1hs) //object rhs)
         //{
-            //return 1hs + rhs;  <<< public object
-            //
-            //Console.WriteLine(item);
-       // }
+        //return 1hs + rhs;  <<< public object
+        //
+        //Console.WriteLine(item);
+        // }
 
         public void update()
         {
@@ -129,11 +146,11 @@ namespace MapExample
 
         //public string Load()
         //{
-           // StreamReader reader = new StreamReader("SaveData.txt");
-            //string name = reader.ReadLine();
-            //player.Load(reader);
-            //reader.Close();
-                                        //return name;
+        // StreamReader reader = new StreamReader("SaveData.txt");
+        //string name = reader.ReadLine();
+        //player.Load(reader);
+        //reader.Close();
+        //return name;
         //}
 
         public void Help()
@@ -156,25 +173,27 @@ namespace MapExample
 
         //public void Save()
         //{
-            //StreamWriter writer = new StreamWriter("SaveData.txt");
-            //writer.WriteLine("P is a player and you");
-            //object name = player.GetName();
-            //writer.WriteLine(name);
-            //player.Save(writer);
-            //writer.Close();
-            //dynamic player = new Player();
+        //StreamWriter writer = new StreamWriter("SaveData.txt");
+        //writer.WriteLine("P is a player and you");
+        //object name = player.GetName();
+        //writer.WriteLine(name);
+        //player.Save(writer);
+        //writer.Close();
+        //dynamic player = new Player();
 
 
-            //bool test = true;
-            //float a = 0.05f;
-            //int b = (int)a;
-            //Console.WriteLine(b);
-            //Console.ReadKey();
+        //bool test = true;
+        //float a = 0.05f;
+        //int b = (int)a;
+        //Console.WriteLine(b);
+        //Console.ReadKey();
 
 
-            //int b = a + 2 * test;
-           // int c = a + test;
+        //int b = a + 2 * test;
+        // int c = a + test;
         //}
+
+
 
         public void SaveMap()
         {
@@ -266,9 +285,11 @@ namespace MapExample
         public void Start()
         {
             Help();
-            
-            
-            
+            Console.WriteLine("Welcome to my shadow game");
+
+
+
+
             //===========================================
 
             //bool test = false;
@@ -294,10 +315,66 @@ namespace MapExample
             if (playerValue.playerHealth <= 0)
             {
                 Console.WriteLine("Failure");
+                Console.ReadKey();
                 GameOver = true;
+                return;
             }
-            //Print game over message
-            Console.WriteLine("Congrats");
+        }
+        public void SelectCharacter()
+        {
+            char input = ' ';
+            //Loops until a valid option is choosen
+            while (input != '1' && input != '2' && input != '3')
+            {
+                //Prints options
+                Console.WriteLine("Welcome! Please select a character.");
+                Console.WriteLine("1.Sir Kibble");
+                Console.WriteLine("Sir Kibble is from noble house called Griffin for bodyguard of Royalty. Griffin's founder was legendary knight who");
+                Console.WriteLine("protected his kingdom multiple and saved a lot Royalty's life. But, Griffin dislike politic and was exiled by greedy and arrogant Royalty");
+                Console.WriteLine("");
+                Console.WriteLine("2.Gnojoel");
+                Console.WriteLine("Gnojoel is mage who bears blood magic from his family and running away from Templer, knight who kill or safeguard mage for fearing magic corruption. Gnojoel wasn't corrupted by blood magic. Gnojoel is such greedy mage. Not money. Not fame. Not glory. Just knowledge for sasifty his curiousity.");
+                Console.WriteLine("");
+                Console.WriteLine("3.Joedazz");
+                Console.WriteLine("Joedazz's race is elves who were enslaved by human and now lower rank is commoner. Human looked down and treat elves as trash. Joedazz's bloodline was legendary Reavor, a warrior who devor blood and flesh for healing his flesh. Joedazz was declared crimenal by noble. because Joedazz killed noble's son. Joedazz killed noble's son for saving Joedazz's sister  because noble's son tried kill her for his pleasure. Joedazz has no place in this city and have no choice but leave city.");
+                Console.WriteLine("");
+                Console.Write("> ");
+                input = Console.ReadKey().KeyChar;
+                //Sets the players default stats based on which character was picked
+                switch (input)
+                {
+                    case '1':
+                        {
+                            playerValue.playerName = "Sir Kibble";
+                            playerValue.playerHealth = 40;
+                            playerValue.playerDamage = 3;
+                            break;
+                        }
+                    case '2':
+                        {
+                            playerValue.playerName = "Gnojoel";
+                            playerValue.playerHealth = 30;
+                            playerValue.playerDamage = 7;
+                            break;
+                        }
+                    case '3':
+                        {
+                            playerValue.playerName = "Joedazz";
+                            playerValue.playerHealth = 50;
+                            playerValue.playerDamage = 5;
+                            break;
+                        }
+                    //If an invalid input is selected display and input message and input over again.
+                    default:
+                        {
+                            Console.WriteLine("Invalid input. Press any key to continue.");
+                            Console.Write("> ");
+                            Console.ReadKey();
+                            break;
+                        }
+                }
+                Console.Clear();
+            }
         }
     }
 }

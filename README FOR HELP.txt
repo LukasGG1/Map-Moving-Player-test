@@ -32,7 +32,7 @@ D = right
 In Process or building code
 ---------------------------
 M = monster and enemy <---- In Process.
-Battle <---- In process. It might take me long time to fix battle loop and finish.
+Battle <---- In process. It might take me long time to fix battle loop and game over.
 
 
 
@@ -48,7 +48,7 @@ G = Chest as Contianer for gear, gold, and treasure. <--- coming soon
 T = Town as location and multiple building or place. <--- coming soon
 S = Shop as location and shops <---- coming sooner
 Q = Quest Giver <----- Coming soon
-t = Trainer for gaining abilities. <---- coming soon or it will take long time to make coding this.
+t = Trainer for gaining abilities. <---- coming soon. it will take long time to make coding this.
 
 
 
