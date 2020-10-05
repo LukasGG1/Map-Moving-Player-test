@@ -24,6 +24,7 @@ namespace MapExample
         //I'm confused.
         private int gold;
         
+        
 
 
         public Player()
@@ -36,7 +37,14 @@ namespace MapExample
             hand.name = "Kira's Fetish";
             hand.statBoost = 1;
         }
-        public void CheckInput()
+
+        public Player(Map save)
+        {
+            CheckInput(save);
+            
+        }
+
+        public void CheckInput(Map save)
         {
             string input;
 
@@ -44,24 +52,26 @@ namespace MapExample
             input = Console.ReadLine();
 
 
-            if (input == "w")
+            if (input == "w" || input == "W")
             {
                 PlayerY--;
             }
-            else if (input == "s")
+            else if (input == "s" || input == "S")
             {
                 PlayerY++;
             }
-            else if (input == "d")
+            else if (input == "d" || input == "D")
             {
                 PlayerX++;
             }
-            else if (input == "a")
+            else if (input == "a" || input == "A")
             {
                 PlayerX--;
             }
             else if (input == "help")
             {
+                Console.WriteLine("");
+                Console.WriteLine("If you type input. click Enter on your keyboard");
                 Console.WriteLine("");
                 Console.WriteLine("Input");
                 Console.WriteLine("-------");
@@ -72,11 +82,13 @@ namespace MapExample
                 Console.WriteLine("d is a right");
                 Console.WriteLine("a is a left");
                 Console.WriteLine("");
-                Console.WriteLine("If you type input. click Enter on your keyboard");
+                Console.WriteLine("Menu");
+                Console.WriteLine("=============");
                 Console.WriteLine("");
-                Console.WriteLine("m is a Menu");
+                Console.WriteLine("o is a option");
                 Console.WriteLine("i is inventory");
                 Console.WriteLine("stats is stat");
+
             }
             else if (input == "stats")
             {
@@ -87,6 +99,37 @@ namespace MapExample
             else if (input == "i")
             {
                 Console.WriteLine("Coming Soon!");
+            }
+
+            else if (input == "option" || input == "Option")
+            {
+                Console.WriteLine("save");
+                
+                input = Console.ReadLine();
+                if (input == "save")
+                {
+                    Console.WriteLine("Save?");
+                    Console.WriteLine("Y/N");
+                    input = Console.ReadLine();
+                    if (input == "Y" || input == "y")
+                    {
+                        Console.WriteLine("Saved!");
+                        save.SaveMap();
+                    }
+                    else if (input == "N" || input == "n")
+                    {
+                        Console.WriteLine("You clicked No.");
+                    }
+                }
+                else if (input == "load")
+                {
+                    Console.WriteLine("Save loaded!");
+                    save.LoadMap();
+                }
+                else if (input == "quit")
+                {
+                    save.GameOver = true;
+                }
             }
             else
             {

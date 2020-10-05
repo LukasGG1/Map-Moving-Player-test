@@ -14,7 +14,9 @@ namespace MapExample
         Player player = new Player();
         Random random = new Random();
         Player playerValue;
+        Map blayer;
         Map _gameoverPlayer;
+
         string path = "SaveMap.txt";
 
         public bool GameOver = false;
@@ -29,38 +31,14 @@ namespace MapExample
             while (GameOver == false)
             {
                 update();
+                draw();
             }
 
             End();
 
         }
 
-        public Map()
-        {
-            //Load Map OtherWise Generate a new map
-            if (!LoadMap())
-            {
-                MapTile[,] TempMap = new MapTile[mapLength, mapWidth];
-                for (int i = 0; i < mapLength; i++)
-                {
-                    for (int j = 0; j < mapWidth; j++)
-                    {
-                        if (i == player.PlayerY && j == player.PlayerY)
-                        {
-                            TempMap[i, j] = player;
-                        }
-                        else
-                        {
-                            TempMap[i, j] = GenTile();
-                        }
 
-                    }
-                }
-                map = TempMap;
-            }
-            //Intial Draw
-            draw();
-        }
 
 
         public void draw()
@@ -77,7 +55,10 @@ namespace MapExample
             }
 
         }
+        public Map()
+        {
 
+        }
         public Map(ref Player player)
         {
             playerValue = player;
@@ -99,7 +80,7 @@ namespace MapExample
             //Save();
             //==============================================
             Console.WriteLine();
-            player.CheckInput();
+            player.CheckInput(this);
             //Create a temporary map
             MapTile[,] TempMap = new MapTile[mapLength, mapWidth];
             //update map with new player location
@@ -198,7 +179,7 @@ namespace MapExample
         public void SaveMap()
         {
             //Open Writer with Path
-            StreamWriter writer = File.CreateText(path);
+            StreamWriter writer = File.CreateText("SaveData.txt");
             //Write Length and Width
             writer.WriteLine(mapLength);
             writer.WriteLine(mapWidth);
@@ -218,10 +199,10 @@ namespace MapExample
         public bool LoadMap()
         {
             //Check If File Exists
-            if (File.Exists(path))
+            if (File.Exists("SaveData.txt"))
             {
                 //Create Reader to path
-                StreamReader reader = File.OpenText(path);
+                StreamReader reader = File.OpenText("SaveData.txt");
                 //Read Map Width and length
                 mapLength = Convert.ToInt32(reader.ReadLine());
                 mapWidth = Convert.ToInt32(reader.ReadLine());
@@ -252,7 +233,7 @@ namespace MapExample
                             player = tempPlayer;
                             TempMap[i, j] = new Player();
                         }
-                        else if (LoadedTiles[j] == '|')
+                        else if (LoadedTiles[j] == '-')
                         {
                             TempMap[i, j] = new MapTile();
                         }
@@ -266,6 +247,7 @@ namespace MapExample
                         }
                     }
                 }
+                Console.WriteLine("Save loaded!");
                 //Close Reader
                 reader.Close();
                 //Set Map to the map we just loaded
@@ -286,6 +268,28 @@ namespace MapExample
         {
             Help();
             Console.WriteLine("Welcome to my shadow game");
+            //Load Map OtherWise Generate a new map
+            if (!LoadMap())
+            {
+                MapTile[,] TempMap = new MapTile[mapLength, mapWidth];
+                for (int i = 0; i < mapLength; i++)
+                {
+                    for (int j = 0; j < mapWidth; j++)
+                    {
+                        if (i == player.PlayerY && j == player.PlayerY)
+                        {
+                            TempMap[i, j] = player;
+                        }
+                        else
+                        {
+                            TempMap[i, j] = GenTile();
+                        }
+
+                    }
+                }
+                map = TempMap;
+            }
+            //Intial Draw
 
 
 
@@ -311,6 +315,7 @@ namespace MapExample
         }
         public void End()
         {
+
             //If the player died print death message
             if (playerValue.playerHealth <= 0)
             {

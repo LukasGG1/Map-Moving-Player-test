@@ -11,7 +11,7 @@ namespace MapExample
     {
         bool _gameOver = false;
         private Player player;
-        Player _enemy;
+        Player enemy;
         Item longSword;
         Item dagger;
         Item bow;
@@ -24,7 +24,6 @@ namespace MapExample
         private Item[] shopInventory;
         private object currentWeapon;
         private object hand;
-
         //Run the game
         public void Run()
         {
@@ -37,6 +36,7 @@ namespace MapExample
 
             End();
         }
+
 
         //Equip item to both players in the beginnning of the game
         public void GetInput(out char input, string option1, string option2, string option3, string query)

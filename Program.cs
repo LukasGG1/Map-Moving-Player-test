@@ -7,7 +7,7 @@ namespace MapExample
         static void Main(string[] args)
         {
             Map map = new Map();
-
+            map.Start();
 
             while (!map.GameOver)
             {
