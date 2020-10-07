@@ -3,9 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HelloWorld
+namespace MapExample
 {
-    class Shop : Item
+    struct Item
+    {
+        public int statBoost;
+        public int cost;
+        public string name;
+    }
+    class Shop : MapTile
     {
         private int gold;
         private Item[] _inventory;
@@ -13,8 +19,15 @@ namespace HelloWorld
 
         public Shop()
         {
+            mapTile = 'S';
             gold = 100;
             _inventory = new Item[3];
+        }
+        public override void Interact(ref Player player, ref Map _gameoverPlayer)
+        { //Oh I'm blind idiot.
+            Console.WriteLine();
+            Console.WriteLine("You entered a shop");
+            Console.ReadKey();
         }
 
         public Shop(Item[] item)

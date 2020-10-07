@@ -112,7 +112,7 @@ namespace MapExample
         MapTile GenTile()
         {
             //Pick a random Number
-            int TileToGenerate = random.Next(0, 12);
+            int TileToGenerate = random.Next(0, 20);
             //create tile based off Random Number
             if (TileToGenerate == 0)
             {
@@ -121,6 +121,10 @@ namespace MapExample
             else if (TileToGenerate == 1)
             {
                 return new Monster();
+            }
+            else if (TileToGenerate == 2)
+            {
+                return new Shop();
             }
             return new MapTile();
         }
@@ -152,37 +156,29 @@ namespace MapExample
         }
 
 
-        //public void Save()
-        //{
-        //StreamWriter writer = new StreamWriter("SaveData.txt");
-        //writer.WriteLine("P is a player and you");
-        //object name = player.GetName();
-        //writer.WriteLine(name);
-        //player.Save(writer);
-        //writer.Close();
-        //dynamic player = new Player();
 
 
-        //bool test = true;
-        //float a = 0.05f;
-        //int b = (int)a;
-        //Console.WriteLine(b);
-        //Console.ReadKey();
-
-
-        //int b = a + 2 * test;
-        // int c = a + test;
-        //}
-
-
+       
+            //  ||
+            //  \/
+            //  This is Example of how to avoid ArguementOutOfRangeExpection.
+        void PrintOddDude(int index, char[] charList)
+        {
+            if(index >= 0 && index < charList.Length)
+            { 
+                Console.WriteLine(charList[index]);
+            }
+        }
 
         public void SaveMap()
         {
-            //Open Writer with Path
+            //Open Writ er with Path
             StreamWriter writer = File.CreateText("SaveData.txt");
             //Write Length and Width
             writer.WriteLine(mapLength);
             writer.WriteLine(mapWidth);
+            writer.WriteLine(player.PlayerY);
+            writer.WriteLine(player.PlayerX);
             //Interate though map saving each tile
             for (int i = 0; i < mapLength; i++)
             {
@@ -219,8 +215,15 @@ namespace MapExample
                     LoadedRow = reader.ReadLine();
 
                     //Convert Loaded Row Into a Character array
-                    char[] LoadedTiles = LoadedRow.ToCharArray();
+                    //  ||
+                    //  \/
+                    // Problem
 
+                    char[] LoadedTiles = LoadedRow.ToCharArray(1, 4);
+                    if (i >= 0 && i < LoadedTiles.Length)
+                    {
+                        Console.WriteLine(LoadedTiles[i]);
+                    }
                     //Go through the row Checking the character and loading in the Corrisponding Tile
                     for (int j = 0; j < mapWidth; j++)
                     {
@@ -241,11 +244,16 @@ namespace MapExample
                         {
                             TempMap[i, j] = new Monster();
                         }
+                        else if (LoadedTiles[j] == 'S')
+                        {
+                            TempMap[i, j] = new Shop();
+                        }
                         else
                         {
                             TempMap[i, j] = new MapTile();
                         }
                     }
+                    
                 }
                 Console.WriteLine("Save loaded!");
                 //Close Reader
@@ -268,6 +276,9 @@ namespace MapExample
         {
             Help();
             Console.WriteLine("Welcome to my shadow game");
+            Console.ReadKey();
+            Console.Clear();
+            //SelectCharacter();
             //Load Map OtherWise Generate a new map
             if (!LoadMap())
             {
@@ -333,15 +344,15 @@ namespace MapExample
             {
                 //Prints options
                 Console.WriteLine("Welcome! Please select a character.");
-                Console.WriteLine("1.Sir Kibble");
-                Console.WriteLine("Sir Kibble is from noble house called Griffin for bodyguard of Royalty. Griffin's founder was legendary knight who");
+                Console.WriteLine("1.Sir YeeHawwer");
+                Console.WriteLine("Sir YeeHawwer is from noble house called Griffin for bodyguard of Royalty. Griffin's founder was legendary knight who");
                 Console.WriteLine("protected his kingdom multiple and saved a lot Royalty's life. But, Griffin dislike politic and was exiled by greedy and arrogant Royalty");
                 Console.WriteLine("");
-                Console.WriteLine("2.Gnojoel");
-                Console.WriteLine("Gnojoel is mage who bears blood magic from his family and running away from Templer, knight who kill or safeguard mage for fearing magic corruption. Gnojoel wasn't corrupted by blood magic. Gnojoel is such greedy mage. Not money. Not fame. Not glory. Just knowledge for sasifty his curiousity.");
+                Console.WriteLine("2.Gnoo");
+                Console.WriteLine("Gnoo is mage who bears blood magic from his family and running away from Templer, knight who kill or safeguard mage for fearing magic corruption. Gnojoel wasn't corrupted by blood magic. Gnojoel is such greedy mage. Not money. Not fame. Not glory. Just knowledge for sasifty his curiousity.");
                 Console.WriteLine("");
-                Console.WriteLine("3.Joedazz");
-                Console.WriteLine("Joedazz's race is elves who were enslaved by human and now lower rank is commoner. Human looked down and treat elves as trash. Joedazz's bloodline was legendary Reavor, a warrior who devor blood and flesh for healing his flesh. Joedazz was declared crimenal by noble. because Joedazz killed noble's son. Joedazz killed noble's son for saving Joedazz's sister  because noble's son tried kill her for his pleasure. Joedazz has no place in this city and have no choice but leave city.");
+                Console.WriteLine("3.Dazz Boy");
+                Console.WriteLine("Dazz Boy's race is elves who were enslaved by human and now lower rank is commoner. Human looked down and treat elves as trash. Joedazz's bloodline was legendary Reavor, a warrior who devor blood and flesh for healing his flesh. Joedazz was declared crimenal by noble. because Joedazz killed noble's son. Joedazz killed noble's son for saving Joedazz's sister  because noble's son tried kill her for his pleasure. Joedazz has no place in this city and have no choice but leave city.");
                 Console.WriteLine("");
                 Console.Write("> ");
                 input = Console.ReadKey().KeyChar;
@@ -350,21 +361,21 @@ namespace MapExample
                 {
                     case '1':
                         {
-                            playerValue.playerName = "Sir Kibble";
+                            playerValue.playerName = "Sir YeeHawwer";
                             playerValue.playerHealth = 40;
                             playerValue.playerDamage = 3;
                             break;
                         }
                     case '2':
                         {
-                            playerValue.playerName = "Gnojoel";
+                            playerValue.playerName = "Gnoo";
                             playerValue.playerHealth = 30;
                             playerValue.playerDamage = 7;
                             break;
                         }
                     case '3':
                         {
-                            playerValue.playerName = "Joedazz";
+                            playerValue.playerName = "Dazz Boy";
                             playerValue.playerHealth = 50;
                             playerValue.playerDamage = 5;
                             break;

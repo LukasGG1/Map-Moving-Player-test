@@ -103,7 +103,14 @@ namespace MapExample
 
             else if (input == "option" || input == "Option")
             {
+                Console.WriteLine("");
+                Console.WriteLine("<Option>");
+                Console.WriteLine("==========");
                 Console.WriteLine("save");
+                Console.WriteLine("");
+                Console.WriteLine("load");
+                Console.WriteLine("");
+                Console.WriteLine("quit");
                 
                 input = Console.ReadLine();
                 if (input == "save")
