@@ -11,9 +11,9 @@ namespace HelloWorld
         int HitChance = 50;
         Random random = new Random();
 
-        public Encounter(ref Player player, Map _gameOver)
+        public Encounter(ref Player player, ref bool gameover)
         {
-            Battle(ref player, ref _gameOver);
+            gameover = Battle(ref player);
         }
 
 
@@ -30,7 +30,7 @@ namespace HelloWorld
                 input = Console.ReadKey().KeyChar;
             }
         }
-        public bool Battle(ref Player player, ref Map _gameOver) //<<< (Character player)
+        public bool Battle(ref Player player) //<<< (Character player)
         {
             
             //initialize default enemy stats

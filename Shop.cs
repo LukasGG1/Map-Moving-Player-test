@@ -23,7 +23,7 @@ namespace MapExample
             gold = 100;
             _inventory = new Item[3];
         }
-        public override void Interact(ref Player player, ref Map _gameoverPlayer)
+        public override void Interact(ref Player player, ref bool gameover)
         { //Oh I'm blind idiot.
             Console.WriteLine();
             Console.WriteLine("You entered a shop");

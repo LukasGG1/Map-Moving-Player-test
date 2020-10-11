@@ -14,12 +14,12 @@ namespace MapExample
         }
         
 
-        public override void Interact(ref Player player, ref Map _gameoverPlayer)
+        public override void Interact(ref Player player, ref bool gameover)
         {
             Console.WriteLine();
             Console.WriteLine(" you run into a Monster");
             Console.ReadKey();
-            Encounter battle = new Encounter(ref player, _gameoverPlayer);
+            Encounter battle = new Encounter(ref player, ref gameover);
         }
 
 

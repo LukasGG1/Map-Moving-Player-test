@@ -45,10 +45,10 @@ namespace MapExample
         {
             Console.Clear();
             //iterate through map writing each map tiles
-            for (int i = 0; i < mapLength; i++)
+            for (int i = 0; i < mapLength-1; i++)
             {
                 Console.WriteLine();
-                for (int j = 0; j < mapWidth; j++)
+                for (int j = 0; j < mapWidth-1; j++)
                 {
                     Console.Write(map[i, j].mapTile);
                 }
@@ -103,7 +103,7 @@ namespace MapExample
             TempMap[player.PlayerY, player.PlayerX] = player;
             //Interact
             //interact with the players new location before the map is updated
-            map[player.PlayerY, player.PlayerX].Interact(ref player, ref _gameoverPlayer);
+            map[player.PlayerY, player.PlayerX].Interact(ref player, ref GameOver);
             //set map to temp map
             map = TempMap;
 
@@ -177,13 +177,13 @@ namespace MapExample
             //Write Length and Width
             writer.WriteLine(mapLength);
             writer.WriteLine(mapWidth);
-            writer.WriteLine(player.PlayerY);
-            writer.WriteLine(player.PlayerX);
+              //writer.WriteLine(player.PlayerY);
+              //writer.WriteLine(player.PlayerX);
             //Interate though map saving each tile
-            for (int i = 0; i < mapLength; i++)
+            for (int i = 0; i < mapLength-1; i++)
             {
                 writer.WriteLine();
-                for (int j = 0; j < mapWidth; j++)
+                for (int j = 0; j < mapWidth-1; j++)
                 {
                     writer.Write(map[i, j].mapTile);
                 }
@@ -208,7 +208,7 @@ namespace MapExample
                 reader.ReadLine();
 
                 //Iterate Through Map Reading Each Character
-                for (int i = 0; i < mapLength; i++)
+                for (int i = 0; i < mapLength-1; i++)
                 {
                     //save this row as string
                     string LoadedRow;
@@ -219,13 +219,13 @@ namespace MapExample
                     //  \/
                     // Problem
 
-                    char[] LoadedTiles = LoadedRow.ToCharArray(1, 4);
+                    char[] LoadedTiles = LoadedRow.ToCharArray();
                     if (i >= 0 && i < LoadedTiles.Length)
                     {
                         Console.WriteLine(LoadedTiles[i]);
                     }
                     //Go through the row Checking the character and loading in the Corrisponding Tile
-                    for (int j = 0; j < mapWidth; j++)
+                    for (int j = 0; j < mapWidth-1; j++)
                     {
                         //Set maps player to this new Temporary Player
                         if (LoadedTiles[j] == 'P')
