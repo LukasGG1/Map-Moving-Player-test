@@ -150,6 +150,10 @@ namespace MapExample
             Console.WriteLine("S = down");
             Console.WriteLine("A = left");
             Console.WriteLine("D = right");
+            Console.WriteLine("");
+            Console.WriteLine("Type option for save, load, and quit");
+            Console.WriteLine("");
+            Console.WriteLine("If You need help. Type help");
             Console.ReadKey();
             Console.Clear();
 
@@ -274,13 +278,32 @@ namespace MapExample
 
         public void Start()
         {
-            Console.WriteLine("Welcome to my shadow game");
+            //Console.WriteLine("Welcome to my shadow game");
+            Console.WriteLine("           /^\\/^\\");
+            Console.WriteLine("         _|__|  O|");
+            Console.WriteLine("\\/     /~     \\_/ \\");
+            Console.WriteLine(" \\____|__________/  \\");
+            Console.WriteLine("        \\_______      \\");
+            Console.WriteLine("                `\\     \\                 \\");
+            Console.WriteLine("                  |     |                  \\");
+            Console.WriteLine("                 /      /                    \\");
+            Console.WriteLine("                /     /                       \\\\");
+            Console.WriteLine("              /      /                         \\ \\");
+            Console.WriteLine("             /     /                            \\  \\");
+            Console.WriteLine("           /     /             _----_            \\   \\");
+            Console.WriteLine("          /     /           _-~      ~-_         |   |");
+            Console.WriteLine("         (      (        _-~    _--_    ~-_     _/   |");
+            Console.WriteLine("          \\      ~-____-~    _-~    ~-_    ~-_-~    /");
+            Console.WriteLine("            ~-_           _-~          ~-_       _-~");
+            Console.WriteLine("               ~--______-~                ~-___-~");
+           
+
             Console.ReadKey();
             Console.Clear();
             Help();
             Console.ReadKey();
             Console.Clear();
-            SelectCharacter();
+           //SelectCharacter();
             Console.ReadKey();
             Console.Clear();
             //SelectCharacter();

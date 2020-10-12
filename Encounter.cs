@@ -44,27 +44,107 @@ namespace HelloWorld
             {
                 case 0:
                     {
+                        Console.WriteLine("                              _.--''-._");
+                        Console.WriteLine("  .                         .'         '.");
+                        Console.WriteLine(" / \\    ,^.         /(     Y             |      )\\");
+                        Console.WriteLine("/   `---. |--'\\    (  \\__..'--   -   -- -'''-.-'  )");
+                        Console.WriteLine("|        :|    `>   '.     l_..-------.._l      .'");
+                        Console.WriteLine("|      __l;__ .'      ' -.__.|| _.- 'v' -._ ||`'----'");
+                        Console.WriteLine(" \\  .-' | |  `              l._       _.'");
+                        Console.WriteLine("  \\/    | |                   l`^^'^^'j");
+                        Console.WriteLine("        | |                _   \\_____/     _");
+                        Console.WriteLine("        j |               l `--__)-'(__.--' |");
+                        Console.WriteLine("        | |               | /`---``-----''| |  , -----.");
+                        Console.WriteLine("        | |               )/  `--' '---'   \'-'  ___  `-. ");
+                        Console.WriteLine("        | |              //  `-'  '`----'  /  ,-'   I`.  \\");
+                        Console.WriteLine("      _ L |_            //  `-.-.'`-----' /  /  |   |  `. \\");
+                        Console.WriteLine("     '._' / \\         _/(   `/   )- ---' ;  /__.J   L.__.\\ :");
+                        Console.WriteLine("      `._;/7(-.......'  /        ) (     |  |            | |");
+                        Console.WriteLine("      `._;l _'--------_/        )-'/     :  |___.    _._./ ;");
+                        Console.WriteLine("        | |                 .__ )-'\\  __  \\  \\  I   1   / /");
+                        Console.WriteLine("        `-'                /   `-\\-(-'   \\ \\  `.|   | ,' /");
+                        Console.WriteLine("                           \\__  `-'    __/  `-. `---'',-'");
+                        Console.WriteLine("                              )-._.-- (        `-----'");
+                        Console.WriteLine("                             )(  l\\ o ('..-.");
+                        Console.WriteLine("                       _..--' _'-' '--'.-. |");
+                        Console.WriteLine("                __,,-'' _,,-''            \\ \\");
+                        Console.WriteLine("               f'. _,,-'                   \\ \\");
+                        Console.WriteLine("              ()--  |                       \\ \\");
+                        Console.WriteLine("                \\.  |                       /  \\");
+                        Console.WriteLine("                  \\ \\                      |._  |");
+                        Console.WriteLine("                   \\ \\                     |  ()|");
+                        Console.WriteLine("                    \\ \\                     \\  /");
+                        Console.WriteLine("                     ) `-.                   | |");
+                        Console.WriteLine("                    // .__)                  | |");
+                        Console.WriteLine("                 _.//7'                      | |");
+                        Console.WriteLine("                                            (| |");
+                        Console.WriteLine("                                             |  \\");
+                        Console.WriteLine("                                             |lllj");
+                        Console.WriteLine("                                             |||||  ");
+                        Console.WriteLine("");
+                        Console.ReadKey();
                         enemyHealth = 100;
                         enemyAttack = 1;
                         enemyDefense = 5;
-                        enemyName = "Virgin AKA Wizard";
+                        enemyName = "Warrior Skeleton";
                         break;
                     }
                 case 1:
                     {
-                        enemyHealth = 80;
-                        enemyAttack = 30;
+                        Console.WriteLine("");
+                        Console.WriteLine("           /^\\/^\\");
+                        Console.WriteLine("         _|__|  O|");
+                        Console.WriteLine("\\/     /~     \\_/ \\");
+                        Console.WriteLine(" \\____|__________/  \\");
+                        Console.WriteLine("        \\_______      \\");
+                        Console.WriteLine("                `\\     \\                 \\");
+                        Console.WriteLine("                  |     |                  \\");
+                        Console.WriteLine("                 /      /                    \\");
+                        Console.WriteLine("                /     /                       \\\\");
+                        Console.WriteLine("              /      /                         \\ \\");
+                        Console.WriteLine("             /     /                            \\  \\");
+                        Console.WriteLine("           /     /             _----_            \\   \\");
+                        Console.WriteLine("          /     /           _-~      ~-_         |   |");
+                        Console.WriteLine("         (      (        _-~    _--_    ~-_     _/   |");
+                        Console.WriteLine("          \\      ~-____-~    _-~    ~-_    ~-_-~    /");
+                        Console.WriteLine("            ~-_           _-~          ~-_       _-~");
+                        Console.WriteLine("               ~--______-~                ~-___-~");
+                        Console.ReadKey();
+                        enemyHealth = 50;
+                        enemyAttack = 20;
                         enemyDefense = 5;
-                        enemyName = "Troll";
+                        enemyName = "Snake";
                         break;
                     }
                 case 2:
                     {
+                        Console.WriteLine("          _......._");
+                        Console.WriteLine("       .-'.'.'.'.'.'.`-.");
+                        Console.WriteLine("     .'.'.'.'.'.'.'.'.'.`.");
+                        Console.WriteLine("    /.'.'               '.\\");
+                        Console.WriteLine("    |.'    _.--...--._     |");
+                        Console.WriteLine("    \\    `._.-.....-._.'   /");
+                        Console.WriteLine("    |     _..- .-. -.._   |");
+                        Console.WriteLine(" .-.'    `.   ((@))  .'   '.-.");
+                        Console.WriteLine("( ^ \\      `--.   .-'     / ^ )");
+                        Console.WriteLine(" \\  /         .   .       \\  /");
+                        Console.WriteLine(" /          .'     '.  .-    \\");
+                        Console.WriteLine("( _.\\    \\ (_`-._.-'_)    /._\\)");
+                        Console.WriteLine(" `-' \\   ' .--.          / `-'");
+                        Console.WriteLine("     |  / /|_| `-._.'\\   |");
+                        Console.WriteLine("     |   |       |_| |   /-.._");
+                        Console.WriteLine(" _..-\\   `.--.______.'  |");
+                        Console.WriteLine("      \\       .....     |");
+                        Console.WriteLine("       `.  .'      `.  /");
+                        Console.WriteLine("         \\           .'");
+                        Console.WriteLine("  LGB     `-..___..-`");
 
+                        Console.WriteLine("");
+                        Console.ReadKey();
                         enemyHealth = 200;
                         enemyAttack = 40;
                         enemyDefense = 10;
-                        enemyName = "Giant";
+                        enemyName = "Cyclops";
                         break;
                     }
             }

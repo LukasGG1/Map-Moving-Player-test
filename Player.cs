@@ -11,8 +11,8 @@ namespace MapExample
     class Player : MapTile
     {
         public string playerName = "Hero";
-        public int playerHealth = 100;
-        public int playerDamage = 200;
+        public int playerHealth = 1000;
+        public int playerDamage = 300;
         public int playerDefense = 10;
         public int PlayerX = 1;
         public int PlayerY = 1;
@@ -85,9 +85,9 @@ namespace MapExample
                 Console.WriteLine("Menu");
                 Console.WriteLine("=============");
                 Console.WriteLine("");
-                Console.WriteLine("o is a option");
+                Console.WriteLine("type and enter option");
                 Console.WriteLine("i is inventory");
-                Console.WriteLine("stats is stat");
+                Console.WriteLine("type and enter stats");
 
             }
             else if (input == "stats")
