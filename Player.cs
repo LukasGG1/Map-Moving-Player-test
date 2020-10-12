@@ -12,7 +12,7 @@ namespace MapExample
     {
         public string playerName = "Hero";
         public int playerHealth = 100;
-        public int playerDamage = 20;
+        public int playerDamage = 200;
         public int playerDefense = 10;
         public int PlayerX = 1;
         public int PlayerY = 1;

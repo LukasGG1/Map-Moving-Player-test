@@ -234,7 +234,7 @@ namespace MapExample
                             tempPlayer.PlayerY = j;
                             tempPlayer.PlayerX = i;
                             player = tempPlayer;
-                            TempMap[i, j] = new Player();
+                            TempMap[i, j] = player;
                         }
                         else if (LoadedTiles[j] == '-')
                         {
@@ -274,8 +274,13 @@ namespace MapExample
 
         public void Start()
         {
-            Help();
             Console.WriteLine("Welcome to my shadow game");
+            Console.ReadKey();
+            Console.Clear();
+            Help();
+            Console.ReadKey();
+            Console.Clear();
+            SelectCharacter();
             Console.ReadKey();
             Console.Clear();
             //SelectCharacter();
@@ -361,23 +366,23 @@ namespace MapExample
                 {
                     case '1':
                         {
-                            playerValue.playerName = "Sir YeeHawwer";
-                            playerValue.playerHealth = 40;
-                            playerValue.playerDamage = 3;
+                            player.playerName = "Sir YeeHawwer";
+                            player.playerHealth = 40;
+                            player.playerDamage = 3;
                             break;
                         }
                     case '2':
                         {
-                            playerValue.playerName = "Gnoo";
-                            playerValue.playerHealth = 30;
-                            playerValue.playerDamage = 7;
+                            player.playerName = "Gnoo";
+                            player.playerHealth = 30;
+                            player.playerDamage = 7;
                             break;
                         }
                     case '3':
                         {
-                            playerValue.playerName = "Dazz Boy";
-                            playerValue.playerHealth = 50;
-                            playerValue.playerDamage = 5;
+                            player.playerName = "Dazz Boy";
+                            player.playerHealth = 50;
+                            player.playerDamage = 5;
                             break;
                         }
                     //If an invalid input is selected display and input message and input over again.
