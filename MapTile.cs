@@ -9,7 +9,8 @@ namespace MapExample
         public char mapTile;
         public MapTile()
         {
-            mapTile = '-';
+            mapTile = '█';
+            //mapTile = '░';
 
         }   
         public virtual void Interact(ref Player player, ref bool gameover)

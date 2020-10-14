@@ -8,8 +8,8 @@ namespace MapExample
 {
     class Map
     {
-        int mapLength = 24;
-        int mapWidth = 24;
+        int mapLength = 28;
+        int mapWidth = 120;
         MapTile[,] map;
         Player player = new Player();
         Random random = new Random();
@@ -278,7 +278,10 @@ namespace MapExample
 
         public void Start()
         {
-            //Console.WriteLine("Welcome to my shadow game");
+            Console.WriteLine("Welcome to my shadow game {0}", Console.ForegroundColor);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Console.WriteLine("           /^\\/^\\");
             Console.WriteLine("         _|__|  O|");
             Console.WriteLine("\\/     /~     \\_/ \\");

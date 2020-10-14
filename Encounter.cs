@@ -91,11 +91,12 @@ namespace HelloWorld
                     }
                 case 1:
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("");
                         Console.WriteLine("           /^\\/^\\");
                         Console.WriteLine("         _|__|  O|");
-                        Console.WriteLine("\\/     /~     \\_/ \\");
-                        Console.WriteLine(" \\____|__________/  \\");
+                        Console.WriteLine("\\/     ","/~     \\_/ \\");
+                        Console.WriteLine(" \\____","|__________/  \\");
                         Console.WriteLine("        \\_______      \\");
                         Console.WriteLine("                `\\     \\                 \\");
                         Console.WriteLine("                  |     |                  \\");
@@ -125,7 +126,9 @@ namespace HelloWorld
                         Console.WriteLine("    |.'    _.--...--._     |");
                         Console.WriteLine("    \\    `._.-.....-._.'   /");
                         Console.WriteLine("    |     _..- .-. -.._   |");
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(" .-.'    `.   ((@))  .'   '.-.");
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine("( ^ \\      `--.   .-'     / ^ )");
                         Console.WriteLine(" \\  /         .   .       \\  /");
                         Console.WriteLine(" /          .'     '.  .-    \\");
