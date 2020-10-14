@@ -299,7 +299,7 @@ namespace MapExample
             Console.WriteLine("          \\      ~-____-~    _-~    ~-_    ~-_-~    /");
             Console.WriteLine("            ~-_           _-~          ~-_       _-~");
             Console.WriteLine("               ~--______-~                ~-___-~");
-           
+            Console.ForegroundColor = ConsoleColor.Gray;
 
             Console.ReadKey();
             Console.Clear();

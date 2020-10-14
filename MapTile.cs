@@ -9,6 +9,7 @@ namespace MapExample
         public char mapTile;
         public MapTile()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             mapTile = '█';
             //mapTile = '░';
 
