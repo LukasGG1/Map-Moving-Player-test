@@ -1,0 +1,170 @@
+﻿ _________________________
+{Lukas Gresham}
+Saving and Loading System
+
+
+## Character
+
+-P is Player and you.
+-M is monster.
+-S is shop <-- (I didn't finished making shop and inventory)
+
+
+
+## Input Information
+
+Please Type and enter any input
+
+->Movement<-
+
+-W is used to move player foward.
+-S is used to move player backward.
+-D is used to move player right.
+-A is used to move player left.
+
+->Option<-
+
+Option is used to display option.
+
+-Save
+-Load
+-Quit
+
+->Battle<-
+-If player encountered monster. It will begins battle.
+
+
+##Output Information
+
+-If you used movement input. It will move player any direction.
+
+->Encounter<-
+-If you internect with M as Monster, It will begins battle.
+-Player and Monster have hit chance. It will tell you player missed Monster.
+
+->Saving and Loading System<-    					<-- It was my biggest frustsing and annoying i ever created code.
+-If you typed and entered Option. It will display Save, Load and Quit
+-If you typed and entered Save. It will saves player, monster and shop's current location in map.
+-If you typed and entered Load. It will loads your save.It will tell you "Save loaded!" If this doesn't have save. It will tell you "No save"
+-If you typed and entered Quit. It will quit or ends game.
+
+
+##Design Or Monster's Apperance
+-I had copyed and pasted text draw from website. So, I created three monster. Snake, Skeletion and Cycloes.
+-I having problem with ConsoleColor. It did made whole map and monster into one color, green.
+
+
+
+## Program
+-to initialize and start the game. You will see title and snake. 
+It means It already started game
+
+
+-=>Class<=-
+## Map
+To manage Update Funcation and Drawing the map.
+
+
+Name:mapLength
+Desc:It will draws Length.
+Type: Int
+
+Name:mapWidth
+Desc:It will draws Width
+Type: Int
+
+Name:Run
+Desc:Main Game Loop
+Type:void
+
+Name:draw
+Desc:Iterate through map writing each map tiles
+Type:void
+
+Name:update
+Desc:Updates the Programs
+Type:void
+
+Name:SaveMap
+Desc:It will saves current map.
+Type:Void
+
+Name:LoadMap
+Desc:It will loads your own save. If you doesn't have save in own file. It will not loads.
+Type:bool
+
+Name:Start
+Desc: Invoke all starting function for LoadMap(It will begins draws map.)
+Type:void
+
+Name:End
+Desc: If player's health reaches zero. It will quits game.
+If you type and enter quit in opinion. it will quits game too.
+Type:void
+
+Name:SelectCharacter
+Desc:Is not using.
+Type:void
+
+
+## MapTile
+To manage draws/create map tile.
+
+
+Name:mapTile
+Desc:A Symbol to represent a particular object on the map
+Type:char
+
+Name:Interact
+Desc: If player interact or touchs monster(M), and shop(S)
+type:virtual void
+
+
+##Encounter
+If player interact monster. It will begins battle.
+
+
+Name:HitChance
+Desc:Chance to attack or miss.
+Type:int
+
+Name:Random
+Desc:It randoming chance.
+Type:Random random = new Random()?
+
+Name:GetInput
+Desc:It give you input and display of Input for battle.
+Type:void
+
+Name:Battle
+Desc:If player interact monster. It will initialize battle.
+type:bool
+
+Name:PrintStats
+Desc:Prints monster's stat.
+Type:void
+
+## Monster
+To manage monster interact player funcation
+
+
+Name:Interact
+Desc:It is same to mapTile information.
+Type:override void
+
+
+## Player
+To manage player's input, and stat
+
+
+Name:CheckInput
+Desc:It does checking and making each word to input. like a W S D A and opinion.
+Type:void
+
+Name:PrintStats
+Desc:It prints player's stat.
+Type:void
+
+Name:GetName
+Desc: It return player's name.
+Type:string
